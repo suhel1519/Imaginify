@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { createUser, deleteUser, updateUser } from "@/lib/actions/user.action";
+import { createUser, deleteUser, updateUser } from "@/lib/actions/user.actions";
 import { clerkClient, WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
@@ -8,8 +8,6 @@ import { Webhook } from "svix";
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
-
-  console.log("WEBHOOK_SECRET called", WEBHOOK_SECRET);
 
   if (!WEBHOOK_SECRET) {
     throw new Error(
@@ -32,9 +30,7 @@ export async function POST(req: Request) {
 
   // Get the body
   const payload = await req.json();
-  console.log("payload", payload);
   const body = JSON.stringify(payload);
-  console.log("body", body);
 
   // Create a new Svix instance with your secret.
   const wh = new Webhook(WEBHOOK_SECRET);
