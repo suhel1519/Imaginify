@@ -31,14 +31,14 @@ export default function RootLayout({
     >
       <html lang="en">
         <head>
-          <script
+          {/* <script
             defer
             src="https://widget-js.cometchat.io/v3/cometchatwidget.js"
-          ></script>
+          ></script> */}
         </head>
         <body className={cn("font-IBMPlex antialiased", IBMPlex.variable)}>
           {children}
-          <script
+          {/* <script
             dangerouslySetInnerHTML={{
               __html: `
                   document.addEventListener("DOMContentLoaded", function() {
@@ -109,7 +109,7 @@ export default function RootLayout({
                   });
               `,
             }}
-          ></script>
+          ></script> */}
         </body>
       </html>
     </ClerkProvider>
