@@ -53,7 +53,7 @@ const MediaUploader = ({
 
   return (
     <CldUploadWidget
-      uploadPreset="imaginary"
+      uploadPreset="photoshop"
       options={{
         multiple: false,
         resourceType: "image",

@@ -38,6 +38,7 @@ export default function RootLayout({
         </head>
         <body className={cn("font-IBMPlex antialiased", IBMPlex.variable)}>
           {children}
+          
           {/* <script
             dangerouslySetInnerHTML={{
               __html: `
